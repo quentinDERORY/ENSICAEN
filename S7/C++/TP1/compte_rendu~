@@ -1,0 +1,15 @@
+TP1
+Pointeurs, références, surcharge et espaces de noms
+
+1.Echauffement
+a)Voila ce qu'affiche la sortie standard
+r vaut 3
+
+b)A la ligne 6, on place une référence r sur le double x.
+A la ligne 7, on affecte à r donc à x la valeur de y qui est de 3.
+A la ligne 8, on affecte à y la valeur 5.
+
+2.programmation
+L'intrus est la fonction où l'argument est passé par valeur.
+
+

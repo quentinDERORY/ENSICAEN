@@ -1,0 +1,11 @@
+TP2
+DERORY
+MAURANYAPIN
+
+1/Définition des complexes
+
+4.Si nous passons les modules et arguments par arguments comme simple double,le compilateur ne fera pas la différence entre le constructeur dont on passe les parties réelles et imaginaires en argument.
+La solution serait de créer deux classes modules et arguments pour que la surcharge du constructeur soit correcte.
+
+5.Dans le constructeur à deux argument,on met la partie imaginaire à 0 par défault quand il n'y a pas de deuxieme argument.
+

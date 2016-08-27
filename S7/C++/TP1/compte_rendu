@@ -1,0 +1,31 @@
+TP1
+Pointeurs, références, surcharge et espaces de noms
+
+1.Echauffement
+a)Voila ce qu'affiche la sortie standard
+r vaut 3
+
+b)A la ligne 6, on place une référence r sur le double x.
+A la ligne 7, on affecte à r donc à x la valeur de y qui est de 3.
+A la ligne 8, on affecte à y la valeur 5.
+
+2.programmation
+L'intrus est la fonction où l'argument est passé par valeur.
+a)Le compilateur n'arrive pas à faire la différence entre la fonction dont son argument est passé en valeur et celle dont son argument est passé en référence.
+b)Je déclare la troisieme et la quatrieme fonction dans un espace de noms différent puis je précise l'espace de noms lors de l'appel de la fonctions voulue.
+
+2.2.3
+Surcharge de fonction de saisies_articles en fonction que ce soit un ou plusieurs Articles que l'on veut enregistrer.
+
+2.3
+Surcharge de fonction de affiche_articles en fonction que ce soit un ou plusieurs Articles que l'on veut afficher.
+
+2.4.1
+
+Par cohérence avec le TP,on a choisi d'utiliser des références d'Articles comme paramètres de la fonction d'échange de prix.
+
+3.
+
+Ma fonction qui échange les prix possèdent comme paramètres des références d'articles alors que ma fonction qui lit un article renvoie un Article.
+Si je mettais des types Article en paramètres de la fonction qui échange les prix,cette fonction ne pourrait pas modifier le contenu de ces articles.
+

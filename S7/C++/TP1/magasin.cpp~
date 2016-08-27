@@ -1,0 +1,68 @@
+#include <iostream>
+#include <magasin.h>
+
+
+
+float lecture_prix(void)
+{
+  float res=0;
+  while(res<=0)
+  cin >> res;
+
+  return res;
+}
+
+void lecture_prix(float* prix)
+{
+  float res=0;
+  while(res<=0)
+    cin >> res;
+
+
+  *prix=res;
+}
+
+void lecture_prix(float prix)
+{
+ float res=0;
+  while(res<=0)
+    cin >> res;
+
+  prix=res;
+}
+
+void lecture_prix(float& prix)
+{
+float res=0;
+  while(res<=0)
+    cin >> res;
+
+  prix=res;
+}
+
+
+
+  
+
+
+int main()
+{
+  float prix;
+  float& ref=prix;
+  
+
+  cout << lecture_prix() << endl;
+
+  lecture_prix(&prix);
+  cout << prix << endl;
+
+  lecture_prix(prix);
+  cout << prix << endl;
+
+  lecture_prix(ref);
+  cout << prix << endl;
+
+
+
+  return 0;
+}

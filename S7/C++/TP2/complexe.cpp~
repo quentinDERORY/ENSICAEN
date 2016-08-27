@@ -1,0 +1,125 @@
+#include <iostream>
+#include <math.h>
+
+class Complexe{
+
+public:
+  Complexe(){ re = im = 0.0; }
+
+  
+  Complexe(double r,double i = 0.0){
+    re=r;
+    im=i;
+  }
+  Complexe(const Complexe& c){
+    re=c.re;
+    im=c.im;
+  }
+ 
+
+  Complexe & operator=(const Complexe& autre)
+  {
+    if (this == &autre) return *this;
+   
+    re=autre.re;
+    im=autre.im;
+    return *this;
+     
+  }
+
+  double get_real(){
+    return re;
+  }
+
+  double get_im(){
+    return im;
+  }
+
+  double get_mod(){
+    return sqrt(re*re+im*im);
+  }
+  
+  double get_arg(){
+    if(re!=0)
+    return atan(im/re);
+    if(im>0)
+      return M_PI/2;
+    else
+      return -M_PI/2;
+  }
+
+  void print(){
+    std::cout << re << " + i*" << im << std::endl;
+  }
+ 
+  void swap(){
+    double tmp;
+    tmp=re;
+    re=im;
+    im=tmp;
+  }
+
+  
+
+private:
+  double re;
+  double im;
+};
+
+
+Complexe operator+(Complexe& c1,Complexe& c2)
+{
+  double r=c1.get_real()+c2.get_real();
+  double i=c2.get_im()+c1.get_im();
+  Complexe c(r,i);
+  return c;
+}
+
+Complexe operator*(Complexe& c1,Complexe& c2)
+{
+  double r=c1.get_real()*c2.get_real()-c1.get_im()*c2.get_im();
+  double i=c1.get_real()*c2.get_im()+c2.get_real()*c1.get_im();
+  Complexe c(r,i);
+  return c;
+}
+
+Complexe operator-(Complexe& c1,Complexe& c2)
+{
+  double r=c1.get_real()-c2.get_real();
+  double i=c2.get_im()-c1.get_im();
+  Complexe c(r,i);
+  return c;
+}
+
+
+Complexe somme_comp(Complexe c1,Complexe c2)
+{
+ 
+
+  return c1+c2;
+}
+
+Complexe diff_comp(Complexe c1,Complexe c2)
+{
+  return c1-c2;
+}
+
+Complexe produit_comp(Complexe c1,Complexe c2)
+{
+  
+  return c1*c2;
+}
+  
+    
+
+
+int main()
+{
+  Complexe c1(5,5),c2(5,2);
+  double d=5;
+  
+  Complexe c3=c1+(Complexe)d;
+
+  c3.print();
+  return 0;
+}

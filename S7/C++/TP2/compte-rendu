@@ -1,0 +1,103 @@
+TP2
+DERORY
+MAURANYAPIN
+
+1/Définition des complexes
+
+4.Si nous passons les modules et arguments par arguments comme simple double,le compilateur ne fera pas la différence entre le constructeur dont on passe les parties réelles et imaginaires en argument.
+La solution serait de créer deux classes modules et arguments pour que la surcharge du constructeur soit correcte.
+
+5.Dans le constructeur à deux argument,on met la partie imaginaire à 0 par défault quand il n'y a pas de deuxieme argument.
+
+3/
+1.
+Sortie standard:
+
+adresse de l'objet   0x7fff128bc0a0   +++Complexe(5,5)
+adresse de l'objet   0x7fff128bc0c0   objet recopié   0x7fff128bc0a0   rrrComplexe(5+ i.5)
+normalise
+adresse de l'objet   0x7fff128bc060   +++Complexe(0.707107,0.707107)
+adresse de l'objet   0x7fff128bc0b0   objet recopié   0x7fff128bc060   rrrComplexe(0.707107+ i.0.707107)
+adresse de l'objet   0x7fff128bc060   ---Complexe(0.707107+ i.0.707107)
+adresse de l'objet   0x7fff128bc0c0   ---Complexe(5+ i.5)
+adresse de l'objet   0x7fff128bc0b0   ---Complexe(0.707107+ i.0.707107)
+adresse de l'objet   0x7fff128bc0a0   ---Complexe(5+ i.5)
+
+A la première ligne, on fait appelle au constructeur à deux paramètres pour initialiser c1.
+Ensuite il réalise une copie pour la fonction normalise .
+Il initialise grace au constructeur à deux paramètres le complexe normalisé.
+Ensuite il copie le paramètre de retour de la fonction dans c2.
+Puis une fois cette copie fini, il détruit tous les éléments locale à la fonction normalise.
+Et une fois le main fini,il supprime toutes les variables de celui ci.
+
+2.
+On considère les angles en radians
+
+Sortie standard:
+adresse de l'objet   0x7fff148185d0   +++Complexe(5,5)
+rotation
+adresse de l'objet   0x7fff148185e0   +++Complexe(-5,5)
+adresse de l'objet   0x7fff148185e0   ---Complexe(-5+ i.5)
+adresse de l'objet   0x7fff148185d0   ---Complexe(5+ i.5)
+
+A la première ligne, on fait appelle au constructeur à deux paramètres pour initialiser c1.
+Il n'y a pas de copie réalisé pour la fonction car c'est une référence qui est en paramètre de la fonction rotation.
+Dans la fonction,le complexe résultant est initialisé grace au constructeur à deux paramètres
+Une fois le main terminé les différents complexes sont détruits.
+
+3.
+sortie standard:
+adresse de l'objet   0x7fff1dbe8410   +++Complexe(5,5)
+adresse de l'objet   0x7fff1dbe8430   +++Complexe(0,50)
+adresse de l'objet   0x7fff1dbe8440   objet recopié   0x7fff1dbe8410   rrrComplexe(5+ i.5)
+max_mod
+adresse de l'objet   0x7fff1dbe8420   objet recopié   0x7fff1dbe8430   rrrComplexe(0+ i.50)
+adresse de l'objet   0x7fff1dbe8440   ---Complexe(5+ i.5)
+adresse de l'objet   0x7fff1dbe8430   ---Complexe(0+ i.50)
+0 + i*50
+adresse de l'objet   0x7fff1dbe8420   ---Complexe(0+ i.50)
+adresse de l'objet   0x7fff1dbe8410   ---Complexe(5+ i.5)
+
+A la première ligne, on fait appelle au constructeur à deux paramètres pour initialiser c1.
+Ensuite on initialise la copie de c1*c1 et une copie de c1 pour la fonction max_mod.
+Comme c1*c1 a un plus grand module il est recopié dans res .
+Une fois la fonction terminé les copies de c1 et de c1*c1 sont supprimées.
+Ensuite a la fin du main les complexes sont détruits.
+
+4.
+
+
+Il faut "caster" le tableau statique d'instance de classe meme si on l'initialise sur la meme ligne que l'on le déclare.
+
+5.
+Sortie standard:
+adresse de l'objet   0x7fff47a88e60   +++Complexe(0,0)
+adresse de l'objet   0x7fff47a88e70   +++Complexe(1,1)
+adresse de l'objet   0x7fff47a88e80   +++Complexe(2,2)
+Appel de foo()
+adresse de l'objet   0x7fff47a88ea0   objet recopié   0x7fff47a88e70   rrrComplexe(1+ i.1)
+adresse de l'objet   0x7fff47a88e90   objet recopié   0x7fff47a88e60   rrrComplexe(0+ i.0)
+adresse de l'objet   0x7fff47a88e20   +++Complexe(10,10)
+adresse de l'objet   0x7fff47a88e20   objet recopié   0x7fff47a88e90   op=Complexe(0+ i.0)
+adresse de l'objet   0x7fff47a88e20   objet recopié   0x7fff47a88ea0   op=Complexe(1+ i.1)
+adresse de l'objet   0x7fff47a88eb0   objet recopié   0x7fff47a88e20   rrrComplexe(1+ i.1)
+adresse de l'objet   0x7fff47a88e20   ---Complexe(1+ i.1)
+adresse de l'objet   0x7fff47a88e80   objet recopié   0x7fff47a88eb0   op=Complexe(1+ i.1)
+adresse de l'objet   0x7fff47a88eb0   ---Complexe(1+ i.1)
+adresse de l'objet   0x7fff47a88e90   ---Complexe(0+ i.0)
+adresse de l'objet   0x7fff47a88ea0   ---Complexe(1+ i.1)
+Fin de main()
+adresse de l'objet   0x7fff47a88e80   ---Complexe(1+ i.1)
+adresse de l'objet   0x7fff47a88e70   ---Complexe(1+ i.1)
+adresse de l'objet   0x7fff47a88e60   ---Complexe(0+ i.0)
+
+Analyse
+Les 3 premières lignes indiquent l'appelle des constructeurs à deux paramètres pour les variables z1,z2 et z3.
+Ensuite,il y a l'appel à la fonction foo suivi des recopie des variables z1 et z2 en variables locales à la fonction foo grace au constructeur par recopie.
+Puis création de la variable z avec le constructeur à deux paramètres.
+Ensuite recopie succesive via l'opérateur d'affectation de la copie localede z1 dans z puis de la copie locale de z2 dans z.
+Puis création de la variable temporaire de retour de la fonction foo grace au constructeur par recopie.
+Ensuite destruction de la variable locale z.
+Puis recopie par opérateur de la variable temporaire de retour dans z3,suivi de la destruction de cette variable temporaire.
+Ensuite destruction des deux copies locales a la fonctions foo de z1 et z2.
+On sort de la fonction foo puis on sort du main et on détruit succesivement les variables z3,z2 et z1.

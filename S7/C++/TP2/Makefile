@@ -1,0 +1,18 @@
+CC=g++
+CPPFLAGS=-I ./Include
+C++FLAGS=-Wall -W -pedantic --std=c++11 -fno-elide-constructors
+DEBUG=-g
+SRC=complexe.cpp
+
+.PHONY=all clean
+
+all:main
+
+main:$(SRC)
+	$(CC) $(C++FLAGS) $(CPPFLAGS)  $^ -o$@ -lm
+
+debug:$(SRC)
+	$(CC) $(CFLAGS) $(CPPFLAGS) $(DEBUG)  $^ -o$@ -lm
+
+clean:debug main
+	$(RM) $^

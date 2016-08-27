@@ -1,0 +1,14 @@
+#include <iostream>
+#include <matrice.h>
+
+
+int main(int argc,char* argv[])
+  {
+    Matrice a;
+    cin >> a ;
+    cout << a << endl << a.determinant();
+
+    
+
+    return 0;
+  }

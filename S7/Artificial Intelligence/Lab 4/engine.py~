@@ -1,0 +1,114 @@
+#! /usr/bin/python -*- coding: utf-8 -*-
+#
+# ENSICAEN
+# École Nationale Supérieure d'Ingénieurs de Caen
+# 6 Boulevard Maréchal Juin
+# F-14050 Caen Cedex France
+#
+# Artificial Intelligence 2I1AE1
+#
+
+#
+# @file engine.py
+#
+# @author Regis Clouard.
+#
+
+"""
+This file contains the function stubs for expert system engine.
+"""
+
+import copy
+from utils import raiseNotDefined
+
+def displayFact( fact ):
+     """ Displays a fact. """
+     print "   Adding new fact: ", fact
+     
+def displayRule( rule ):
+     """ Displays a rule. """
+     line = ""
+     for c in rule[0]:
+          if len(line) == 0:
+               line += str(c)
+          else:
+               line += " ^ "+ str(c) 
+     line += " -> ";
+     line += str(rule[1])
+     return line
+
+#######
+####### Exercise 1
+#######
+# Working memory
+facts = []
+
+# Rule base
+rules = []
+
+def addFact( fact ):
+     """ Adds a fact to the working memory. 
+     @param fact a new fact to introduce in the working memory. """
+     
+     " *** YOUR CODE HERE ***"
+     raiseNotDefined()
+
+def addRule( conditions, consequence ):
+     """ Adds a rule in the knowledge base.
+     @param conditions a condition list ['cond1',...,'cond']
+     @param consequence a new fact to add to the working memory. """
+     
+     " *** YOUR CODE HERE ***"
+     raiseNotDefined()
+
+#######
+####### Exercise 2
+#######
+def getRulePremise( rule ):
+     """ Returns the premise part of the rule. """
+     
+     " *** YOUR CODE HERE ***"
+     raiseNotDefined()
+
+def getRuleConclusion( rule ):
+     """ Returns the conclusion part of the rule. """
+     
+     " *** YOUR CODE HERE ***"
+     raiseNotDefined()
+
+#######
+####### Exercise 3
+#######
+def isOneCondition( rule, fact ):
+     """ Returns True if the fact matches one
+     of the rule conditions.
+     @param rule a rule
+     @param fact a fact. """ 
+     
+     " *** YOUR CODE HERE ***"
+     raiseNotDefined()
+
+#######
+####### Exercise 4
+#######
+def forwardChainingInference( facts, rules ):
+     """ The forward chaining engine.
+     Keeps on firing rules until there are no rules which can be applied
+     on the initial and inferred facts.
+     @param rules the list of rules.
+     @param initialFacts The initials facts. """
+     
+     " *** YOUR CODE HERE ***"
+     raiseNotDefined()
+
+#######
+####### Exercise 5
+#######
+def backwardChainingInference( query, facts, rules ):
+     """ The backward chaining engine.
+     @param query the fact to prove.
+     @param facts current facts in the knowledge based
+     @param rules rules in the knowledge base. """
+     
+     " *** YOUR CODE HERE ***"
+     raiseNotDefined()

@@ -1,0 +1,22 @@
+
+using namespace std;
+
+struct Article{
+  char  designation[30];
+  float prix;
+};
+
+
+float lecture_prix(void);
+
+void lecture_prix(Article* art);
+
+void lecture_prix(Article art);
+
+void lecture_prix(Article& art);
+
+
+
+
+
+

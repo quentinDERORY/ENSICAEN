@@ -1,0 +1,28 @@
+#include <iostream>
+#include <magasin.h>
+
+
+
+int main()
+{
+  float prix;
+  float& ref=prix;
+  Article art;
+  
+
+  /*cout << lecture_prix() << endl;
+  
+  lecture_prix(&prix);
+  cout << prix << endl;
+
+  value::lecture_prix(prix);
+  cout << prix << endl;
+
+  reference::lecture_prix(ref);
+  cout << prix << endl;
+  */
+
+  art=saisie_articles();
+  cout << art.prix << endl << art.designation;
+  return 0;
+}
