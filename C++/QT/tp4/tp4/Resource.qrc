@@ -1,0 +1,11 @@
+<RCC>
+    <qresource prefix="/new/prefix1">
+        <file>coller.jpeg</file>
+        <file>copier.jpeg</file>
+        <file>couper.jpeg</file>
+        <file>enregistrer.jpeg</file>
+        <file>enregistrer_sous.jpeg</file>
+        <file>nouveau.jpeg</file>
+        <file>repertoire.jpeg</file>
+    </qresource>
+</RCC>
